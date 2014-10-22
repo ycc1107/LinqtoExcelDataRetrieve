@@ -56,20 +56,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BorrowingsData.cs" />
-    <Compile Include="CreateExcelFile.cs" />
+    <Compile Include="FixedClassBased\BorrowingsData.cs" />
+    <Compile Include="FixedClassBased\CreateExcelFile.cs" />
     <Compile Include="DynamicClass\DynamicDataObject.cs" />
     <Compile Include="DynamicClass\FieldClass.cs" />
-    <Compile Include="FundLevelData.cs" />
-    <Compile Include="FundOwnershipData.cs" />
-    <Compile Include="GetExcelData.cs" />
-    <Compile Include="PositionData.cs" />
+    <Compile Include="FixedClassBased\FundLevelData.cs" />
+    <Compile Include="FixedClassBased\FundOwnershipData.cs" />
+    <Compile Include="FixedClassBased\GetExcelData.cs" />
+    <Compile Include="FixedClassBased\PositionData.cs" />
+    <Compile Include="GetFile.cs" />
+    <Compile Include="MappingMethod\DynamicClass.cs" />
+    <Compile Include="MappingMethod\ExtendedDataLevel.cs" />
+    <Compile Include="MappingMethod\GetExcelData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

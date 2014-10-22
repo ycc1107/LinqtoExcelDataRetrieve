@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using LinqtoExcelGroupby.FixedClassBased;
 
-namespace LinqtoExcelGroupby.DynamicClass
+namespace LinqtoExcelGroupby.MappingMethod
 {
     class FieldClass
     {

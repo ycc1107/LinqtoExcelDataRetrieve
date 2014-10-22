@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Emit;
 using System.Reflection;
+using LinqtoExcelGroupby.FixedClassBased;
 
-namespace LinqtoExcelGroupby.DynamicClass
+namespace LinqtoExcelGroupby.MappingMethod
 {
     class DynamicDataObject : GetExcelDataBase<DynamicDataObject>
     {
@@ -14,7 +15,7 @@ namespace LinqtoExcelGroupby.DynamicClass
 
         public void CreateNewObject()
         {
-            if (this.fieldInformation == default(List<FieldClass>))
+            if (this.fieldInformation.Count <= 0)
                 throw new NotImplementedException("Fill the field information first");
 
             var newColnum = CompileResultType();
@@ -52,22 +53,17 @@ namespace LinqtoExcelGroupby.DynamicClass
 
         private void CreateProperty(TypeBuilder tb, string propertyName, Type propertyType)
         {
-            FieldBuilder fieldBuilder = tb.DefineField("_" + propertyName, propertyType, FieldAttributes.Private);
+            FieldBuilder fieldBuilder = tb.DefineField(propertyName, propertyType, FieldAttributes.Public);
 
             PropertyBuilder propertyBuilder = tb.DefineProperty(propertyName, PropertyAttributes.HasDefault, propertyType, null);
-            MethodBuilder getPropMthdBldr = tb.DefineMethod("get_" + propertyName, MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.HideBySig, propertyType, Type.EmptyTypes);
+            MethodBuilder getPropMthdBldr = tb.DefineMethod(propertyName, MethodAttributes.Public);
             ILGenerator getIl = getPropMthdBldr.GetILGenerator();
 
             getIl.Emit(OpCodes.Ldarg_0);
             getIl.Emit(OpCodes.Ldfld, fieldBuilder);
             getIl.Emit(OpCodes.Ret);
 
-            MethodBuilder setPropMthdBldr =
-                tb.DefineMethod("set_" + propertyName,
-                  MethodAttributes.Public |
-                  MethodAttributes.SpecialName |
-                  MethodAttributes.HideBySig,
-                  null, new[] { propertyType });
+            MethodBuilder setPropMthdBldr = tb.DefineMethod(propertyName, MethodAttributes.Public);
 
             ILGenerator setIl = setPropMthdBldr.GetILGenerator();
             Label modifyProperty = setIl.DefineLabel();
