@@ -7,7 +7,8 @@ using LinqToExcel;
 using LinqtoExcelGroupby.MappingMethod;
 using LinqtoExcelGroupby.FixedClassBased;
 using System.Linq.Expressions;
-using LinqtoExcelGroupby.MappingMethod;
+using LinqtoExcelGroupby.InputAndInital;
+using System.Reflection;
 
 namespace LinqtoExcelGroupby
 {
@@ -16,9 +17,9 @@ namespace LinqtoExcelGroupby
 
         static void Main(string[] args)
         {
-            const string pathToExcelFile = @"C:\Users\cyan\Desktop\AIFMD\AIFMD.xlsm";
-            CreateExcelFile excelFile = new CreateExcelFile(pathToExcelFile);
+            
 
+            #region temp
             //BorrowingsData data1 = new BorrowingsData();
             //data1.SetExcelData = excelFile.getExcelFile;
 
@@ -100,26 +101,21 @@ namespace LinqtoExcelGroupby
             //              group item by item["CounterParty"] into grouped
             //              select  new { type = grouped.Key, sumTotal = grouped.Sum(x => Convert.ToDouble(x["Amount_Base"])) }
             //              ).ToList();
-
-            List<string> mappingList = new List<string>()
-            {
-                "AIF_Sub_Asset_Type",
-                "Exposure"
-            };
-
-            DynamicClass test = new DynamicClass();
-            test.createTempField(2);
-            test.setMappingList = mappingList;
-            var x = test.loadPositionData;
-
+            #endregion
 
             
-                
-                                          
 
-           
 
+            Inital inital = new Inital();
+            //string query = @".Select( k => k.)"
+            List<string> y = new List<string>();
+            y.Add("Position_Level");
+            string query = @".GroupBy|Instrument_Group .Select|sum Price";
+            inital.queryData(query, y);
+         
             Console.ReadKey();
         }
+
+       
     }
 }

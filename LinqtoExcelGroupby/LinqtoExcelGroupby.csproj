@@ -65,7 +65,7 @@
     <Compile Include="FixedClassBased\GetExcelData.cs" />
     <Compile Include="FixedClassBased\PositionData.cs" />
     <Compile Include="GetFile.cs" />
-    <Compile Include="MappingMethod\DynamicClass.cs" />
+    <Compile Include="InputAndInital\Inital.cs" />
     <Compile Include="MappingMethod\ExtendedDataLevel.cs" />
     <Compile Include="MappingMethod\GetExcelData.cs" />
     <Compile Include="Program.cs" />

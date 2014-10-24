@@ -11,9 +11,12 @@ namespace LinqtoExcelGroupby.MappingMethod
 {
     class GetExcelDataBase<T>
     {
+        private const int FIELD_NAME_BEGIN_INDEX = 1;
+        private const int FIELD_NAME_END_INDEX = 6;
+
         private string _sheetName;
-        private ExcelQueryFactory _excelFile;
         private List<T> _preloadedData;
+        private List<string> _mappingList;
 
         public string setSheetName
         {
@@ -23,38 +26,40 @@ namespace LinqtoExcelGroupby.MappingMethod
             }
         }
 
-        public List<string> setMappingList { get; set; }
+        public List<string> MappingList { get; set; }
 
-        public ExcelQueryFactory SetExcelData { get; set; }
+        public ExcelQueryFactory ExcelData { set; get; }
 
-        public virtual void mappingTheColomn() 
+        public virtual void mappingTheColomn()
         {
-            if (setMappingList.Count <= 0)
+            if (MappingList.Count <= 0)
                 throw new NotImplementedException("Do not have mapping list.");
 
             int fieldCounter = 0;
             Type classType = typeof(T);
             FieldInfo[] fieldInfo = classType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
-            int fieldDifferent = setMappingList.Count() - fieldInfo.Count();
 
-            foreach (string mapping in setMappingList)
-                SetExcelData.AddMapping(fieldInfo[fieldCounter++].Name, mapping);
+            if (MappingList.Count() - fieldInfo.Count() > 0)
+                throw new NotImplementedException("more than field number");
+
+            foreach (string mapping in MappingList)
+                ExcelData.AddMapping(fieldInfo[fieldCounter++].Name.Substring(FIELD_NAME_BEGIN_INDEX, FIELD_NAME_END_INDEX), mapping);
+
         }
 
-        public  List<T> loadPositionData
-        {  
+        public List<T> loadPositionData
+        {
             get
             {
 
                 if (_preloadedData == default(List<T>))
                 {
                     mappingTheColomn();
-                    _preloadedData = _excelFile.Worksheet<T>(_sheetName).ToList();
+                    _preloadedData = ExcelData.Worksheet<T>(_sheetName).ToList();
                 }
                 return _preloadedData;
 
             }
-
         }
     }
 }
