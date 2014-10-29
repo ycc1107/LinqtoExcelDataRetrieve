@@ -8,6 +8,8 @@ using LinqtoExcelGroupby.MappingMethod;
 using LinqtoExcelGroupby.FixedClassBased;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Linq.Expressions;
+using System.Linq.Dynamic;
 
 namespace LinqtoExcelGroupby.InputAndInital
 {
@@ -23,56 +25,6 @@ namespace LinqtoExcelGroupby.InputAndInital
         private Dictionary<string, Dictionary<string, string>> _functionMethodValue = new Dictionary<string, Dictionary<string, string>>();
         private ExcelQueryFactory _excelFile;
         private MethodInfo[] _queryMethodList;
-
-        public Inital()
-        {
-            const string pathToExcelFile = @"C:\Users\cyan\Desktop\AIFMD\AIFMD.xlsm";
-            CreateExcelFile excel = new CreateExcelFile(pathToExcelFile);
-            _queryMethodList = typeof(System.Linq.Enumerable).GetMethods();
-            _excelFile = excel.getExcelFile;
-        }
-
-        public Dictionary<string, List<LinqToExcel.Row>> GetData
-        {
-            get { return _excelDataContain; }
-        }
-
-        private List<LinqToExcel.Row> getData(string dataPosition)
-        {
-            List<LinqToExcel.Row> result = new List<LinqToExcel.Row>();
-
-            if ( !_excelDataContain.TryGetValue(dataPosition, out result))
-                _excelDataContain.Add(dataPosition,_excelFile.Worksheet(dataPosition).ToList());
-
-            _excelDataContain.TryGetValue(dataPosition, out result);
-            return result;
-
-        }
-
-        public void queryData(string query,List<string> dataPosition)
-        {
-            List<LinqToExcel.Row> temp = getData(POSISITION_LEVEL);
-
-            getQueryMethod(query);
-
-            foreach (string method in _functionMethodValue.Keys)    
-            {
-                Dictionary<string,string> value = new Dictionary<string,string>();
-                foreach(MethodInfo queryMethod in _queryMethodList)
-                {
-                    if (queryMethod.Name.ToLower().CompareTo(method) == 0)
-                    {
-                        MethodInfo tempQueryMethod = typeof(LinqToExcel.Row).GetMethod(queryMethod.Name,new[]{typeof(System.Linq.Expressions.LabelExpression)});
-
-                        tempQueryMethod.Invoke(temp, new object[] { "k => k.Instrument_Group" });
-                    }
-                }
-                value = _functionMethodValue[method];
-            }
-
-            //thisMethods.Invoke(this, null);
-
-        }
 
 
         private void getQueryMethod(string query)
@@ -90,6 +42,7 @@ namespace LinqtoExcelGroupby.InputAndInital
             }
 
         }
+
         private Dictionary<string, string> getQueryValue(List<string> vale)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
@@ -115,6 +68,99 @@ namespace LinqtoExcelGroupby.InputAndInital
             }
             return result;
         }
+
+        private void setMappingToCol()
+        {
+            GetDataClass mappingData = new GetDataClass();
+            List<string> colNames = new List<string>()
+            {
+                "AIF_Sub_Asset_Type",
+                "Exposure",
+                "Local_Market_Value"
+            };
+            mappingData.mappingFieldToColnum(colNames, _excelFile);
+
+        }
+
+        public Inital()
+        {
+            const string pathToExcelFile = @"C:\Users\cyan\Desktop\AIFMD\AIFMD.xlsm";
+            CreateExcelFile excel = new CreateExcelFile(pathToExcelFile);
+            _queryMethodList = typeof(System.Linq.Enumerable).GetMethods();
+            _excelFile = excel.getExcelFile;
+        }
+
+        public Dictionary<string, List<LinqToExcel.Row>> GetData
+        {
+            get { return _excelDataContain; }
+        }
+
+        private List<LinqToExcel.Row> getData(string dataPosition)
+        {
+            List<LinqToExcel.Row> result = new List<LinqToExcel.Row>();
+
+            if ( !_excelDataContain.TryGetValue(dataPosition, out result))
+                _excelDataContain.Add(dataPosition, _excelFile.Worksheet (dataPosition).ToList());
+
+            _excelDataContain.TryGetValue(dataPosition, out result);
+            return result;
+
+        }
+
+        
+        public void queryData(string query,List<string> dataPosition)
+        {
+            List<LinqToExcel.Row> temp = getData(POSISITION_LEVEL);
+
+            getQueryMethod(query);
+
+            foreach (string method in _functionMethodValue.Keys)    
+            {
+                Dictionary<string,string> value = new Dictionary<string,string>();
+                foreach(MethodInfo queryMethod in _queryMethodList)
+                {
+                    if (queryMethod.Name.ToLower().CompareTo(method) == 0)
+                    {
+                        string name = "Exposure";
+                        string groupedName = "AIF_Sub_Asset_Type";
+                        int testValue = 10;
+                        Expression<Func<LinqToExcel.Row, bool>> whereExpression =
+                            (item) => Convert.ToDouble(item[name]) > testValue;
+
+                        MethodInfo tempQueryMethod = typeof(LinqToExcel.Row).GetMethod(queryMethod.Name,new[]{typeof(System.Linq.Expressions.LabelExpression)});
+                        var test = (from item in temp
+                                    where Convert.ToDouble(item[name]) < 10000
+                                    group item by item[groupedName] into A
+                                    select  new { id = A.Key, sum = A.Sum(x=> Convert.ToDouble(x[name]))});
+                        
+                        var 
+                                     
+
+                        
+                        
+
+                        //ParameterInfo[] tempPara = queryMethod.GetParameters();
+                        //object[] paramerterArray = new object[tempPara.Count()];
+                        //int i = 0;
+                        //foreach(ParameterInfo  para in tempPara)
+                        //{
+                        //    if(i == 0)
+                        //        paramerterArray[i++] = from rowItem in temp select rowItem;
+                        //    else
+                        //        paramerterArray[i++] = "AIF_Sub_Asset_Type";
+                        //}
+                        //queryMethod.Invoke(temp, new object[] { paramerterArray });
+                    }
+                }
+                value = _functionMethodValue[method];
+            }
+
+            //thisMethods.Invoke(this, null);
+
+        }
+        
+        
+        
         
     }
 }

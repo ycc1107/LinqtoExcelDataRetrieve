@@ -11,3 +11,4 @@ c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExc
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.csprojResolveAssemblyReference.cache
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.exe
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.pdb
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\System.Linq.Dynamic.dll
