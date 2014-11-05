@@ -1,0 +1,45 @@
+AIFM 1.30 - 32
+AIF Macro Asset Type,Sum Exposure
+Foreign exchange (for investment purposes),61023707
+Unlisted equities,58254974
+Listed equities issued by financial institutions,53037978
+Investment in CIU operated/managed by the AIFM-ETF,52433145
+Foreign exchange (for hedging purposes),4
+
+AIFM 2.287 - 289
+287,-63931947
+288,-41688541
+
+AIFM 4.296 - 301
+Counter Party,Total Amount
+JPMORGAN,59750462
+CREDIT SUISSE,56237238
+BANKOFAMERICA/MERRILLLYNCH,36126860
+DEUTSCHE BANK,26693172
+GOLDMAN SACHS,23738308
+
+AIF.2.294-295
+ID,Factor
+DEMO_CLIENT_HEDGE_FUND_A,0.4
+DEMO_CLIENT_HEDGE_FUND_B,61578600.8333333
+
+AIF.2.208-209
+Non-financial corporations,12.814929
+Insurance corporations,10.192401
+Banks,5.738295
+Other financial institutions,15.848718
+Pension plans / funds,10.468598
+General government,11.200201
+Other collective investment undertakings,23.678531
+Households,0.167788
+Unknown,9.819517
+None,0.071022
+
+AIF.1.58-61
+DEMO_CLIENT_HEDGE_FUND_A,HEDGE
+DEMO_CLIENT_HEDGE_FUND_AEquity: Long / Short,0.437300579970613
+DEMO_CLIENT_HEDGE_FUND_AEquity: Long Bias,0.562699420029384
+1-No Data,
+DEMO_CLIENT_HEDGE_FUND_BEquity: Long / Short,0.5
+DEMO_CLIENT_HEDGE_FUND_BEquity: Long Bias,0.5
+

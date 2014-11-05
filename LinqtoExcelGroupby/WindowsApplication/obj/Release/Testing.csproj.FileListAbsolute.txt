@@ -1,0 +1,16 @@
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Testing.exe.config
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Testing.exe
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Testing.pdb
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\LinqToExcel.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\log4net.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Remotion.Data.Linq.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Remotion.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\Remotion.Interfaces.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\LinqToExcel.xml
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\bin\Release\log4net.xml
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.Form1.resources
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.Properties.Resources.resources
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.csproj.GenerateResource.Cache
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.exe
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.pdb
+C:\Users\cyan\documents\visual studio 2012\Projects\Testing\Testing\obj\Release\Testing.csprojResolveAssemblyReference.cache
