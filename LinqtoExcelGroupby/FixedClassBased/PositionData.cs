@@ -21,19 +21,19 @@ namespace LinqtoExcelGroupby.FixedClassBased
         public string anySecuritiesBorrowingLending { get; set; }
         public string fundUniqueIdentifier { get; set; }
 
-        //public override void mappingTheColomn()
-        //{
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.aIFSubAssetType, "AIF_Sub_Asset_Type");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.exposure, "Exposure");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.localMarketValue, "Local_Market_Value");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.fXRateBase, "FX_Rate_Base");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.aIFStrategy, "AIF_Strategy");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.businessDate, "Business_Date");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.derivativeCategory, "Derivative_Category");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.aIFMacroAssetType, "AIF_Macro_Asset_Type");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.anySecuritiesBorrowingLending, "Any_Securities_Borrowing_Lending");
-        //    base.SetExcelData.AddMapping<PositionData>(k => k.fundUniqueIdentifier, "Fund_Unique_Identifier");
-        //}
+        public override void mappingTheColomn()
+        {
+            base.SetExcelData.AddMapping<PositionData>(k => k.aIFSubAssetType, "AIF_Sub_Asset_Type");
+            base.SetExcelData.AddMapping<PositionData>(k => k.exposure, "Exposure");
+            base.SetExcelData.AddMapping<PositionData>(k => k.localMarketValue, "Local_Market_Value");
+            base.SetExcelData.AddMapping<PositionData>(k => k.fXRateBase, "FX_Rate_Base");
+            base.SetExcelData.AddMapping<PositionData>(k => k.aIFStrategy, "AIF_Strategy");
+            base.SetExcelData.AddMapping<PositionData>(k => k.businessDate, "Business_Date");
+            base.SetExcelData.AddMapping<PositionData>(k => k.derivativeCategory, "Derivative_Category");
+            base.SetExcelData.AddMapping<PositionData>(k => k.aIFMacroAssetType, "AIF_Macro_Asset_Type");
+            base.SetExcelData.AddMapping<PositionData>(k => k.anySecuritiesBorrowingLending, "Any_Securities_Borrowing_Lending");
+            base.SetExcelData.AddMapping<PositionData>(k => k.fundUniqueIdentifier, "Fund_Unique_Identifier");
+        }
 
         public PositionData()
         {

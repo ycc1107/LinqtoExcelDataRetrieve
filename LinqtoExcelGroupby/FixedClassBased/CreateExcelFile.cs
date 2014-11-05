@@ -11,7 +11,6 @@ namespace LinqtoExcelGroupby.FixedClassBased
     {
         private ExcelQueryFactory _file;
     
-        //private 
 
         public ExcelQueryFactory getExcelFile { get { return _file; } }
 

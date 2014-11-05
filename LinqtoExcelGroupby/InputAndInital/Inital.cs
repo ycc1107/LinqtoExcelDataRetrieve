@@ -133,11 +133,6 @@ namespace LinqtoExcelGroupby.InputAndInital
                                     group item by item[groupedName] into A
                                     select  new { id = A.Key, sum = A.Sum(x=> Convert.ToDouble(x[name]))});
                         
-                        var 
-                                     
-
-                        
-                        
 
                         //ParameterInfo[] tempPara = queryMethod.GetParameters();
                         //object[] paramerterArray = new object[tempPara.Count()];

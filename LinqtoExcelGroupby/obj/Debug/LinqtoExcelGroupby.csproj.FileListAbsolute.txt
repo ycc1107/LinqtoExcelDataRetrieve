@@ -8,7 +8,12 @@ c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExc
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\Remotion.Interfaces.dll
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\LinqToExcel.xml
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\log4net.xml
-c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.csprojResolveAssemblyReference.cache
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.exe
 c:\users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.pdb
 C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\LinqtoExcelGroupby.exe.manifest
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\LinqtoExcelGroupby.application
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.exe.manifest
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\obj\Debug\LinqtoExcelGroupby.application
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\LinqtoExcelGroupby.exe.CodeAnalysisLog.xml
+C:\Users\cyan\documents\visual studio 2012\Projects\LinqtoExcelGroupby\LinqtoExcelGroupby\bin\Debug\LinqtoExcelGroupby.exe.lastcodeanalysissucceeded
